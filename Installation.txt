@@ -1,0 +1,55 @@
+To install Freeswitch, I first created a new instance on VM machine and installed ubuntu 16.04 (32-bit) on it, then I installed some of the pre-requiste package for the installation (The sequence of running below command may differ as couple of packages which was missing that I come to know while running ./configure and make. 
+
+vivek@ubuntu:~$ sudo apt-get update
+vivek@ubuntu:~$ sudo apt-get install -y libyuv-dev libvpx2-dev liblua5.2-dev libvpx2-dev libvpx2 zlib1g-dev libspeex1 libopus-dev libsndfile-dev autoconf automake devscripts gawk g++ git-core 'libjpeg-dev|libjpeg62-turbo-dev' libncurses5-dev 'libtool-bin|libtool' make python-dev gawk pkg-config libtiff5-dev libperl-dev libgdbm-dev libdb-dev gettext libssl-dev libcurl4-openssl-dev libpcre3-dev libspeex-dev libspeexdsp-dev libsqlite3-dev libedit-dev libldns-dev libpq-dev yasm
+vivek@ubuntu:~$ sudo apt-get install dh-autoreconf
+vivek@ubuntu:~$ sudo apt-get install libtool-bin
+vivek@ubuntu:~$ sudo apt-get install libpq-dev
+vivek@ubuntu:~$ sudo apt-get install libjpeg-dev libpng12-dev
+vivek@ubuntu:~$ sudo apt-get install pkg-config
+vivek@ubuntu:~$ sudo apt-get install sqlite3 libsqlite3-dev
+vivek@ubuntu:~$ sudo apt-get install libcurl4-openssl-dev
+vivek@ubuntu:~$ sudo apt-get install libpcre3
+vivek@ubuntu:~$ sudo apt-get install libpcre3-dev
+vivek@ubuntu:~$ sudo apt-get install libspeex-dev
+vivek@ubuntu:~$ sudo apt-get install libspeexdsp-dev
+vivek@ubuntu:~$ sudo apt-get install libldns-dev
+vivek@ubuntu:~$ sudo apt-get install libedit-dev
+vivek@ubuntu:~$ sudo apt-get install yasm
+vivek@ubuntu:~$ sudo apt-get install flex
+vivek@ubuntu:~$ sudo apt-get install build-essential
+vivek@ubuntu:~$ sudo apt-get install bison
+vivek@ubuntu:~$ sudo apt-get install libncurses5-dev
+vivek@ubuntu:~$ sudo apt-get install unixodbc-dev
+vivek@ubuntu:~$ sudo apt-get install libnspr4
+vivek@ubuntu:~$ sudo apt-get install automake
+vivek@ubuntu:~$ sudo apt-get install libtool
+vivek@ubuntu:~$ sudo apt-get install libmudflap0-dev
+vivek@ubuntu:~$ sudo apt-get install libltdl3-dev
+vivek@ubuntu:~$ sudo apt-get -y install libx11-dev
+vivek@ubuntu:~$ apt-get install liblua5.1-0-dev liblua50-dev liblualib50-dev
+vivek@ubuntu:~$ sudo apt-get install liblua5.1-0-dev liblua50-dev liblualib50-dev
+vivek@ubuntu:~$ sudo apt-get install libopus-dev
+vivek@ubuntu:~$ sudo apt-get install libsndfile1-dev
+vivek@ubuntu:~$  cd /usr/src/
+vivek@ubuntu:~$  sudo git clone -b v1.6 https://freeswitch.org/stash/scm/fs/freeswitch.git
+vivek@ubuntu:~$  cd freeswitch/
+vivek@ubuntu:~$  sudo ./bootstrap.sh -j
+vivek@ubuntu:~$  sudo ./configure --enable-core-pgsql-support --prefix="/usr/local/switch/" --with-java=/usr/lib/jvm/java-8-oracle/include/
+vivek@ubuntu:~$  sudo make
+vivek@ubuntu:~$  sudo make install
+vivek@ubuntu:~$  cd /usr/local/switch/bin
+vivek@ubuntu:~$  sudo ./freeswitch
+
+
+Note: While running make if you get some error, please run make clean and make distclean and then re-execute the above steps after resolving the error.
+
+This will install the Freeswitch server on ubuntu.
+
+
+
+
+
+
+
+
